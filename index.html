@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href = "style.css">
+</head>
+
+<title> Joe's Hotdogs </title>
+<script language = "Javascript" type = "text/javascript">
+    var total;
+    var hotdogs = prompt("How many hotdogs do you want?");
+    var fries = prompt("How many fries do you want?");
+    var sodas = prompt("How many sodas do you want?");
+
+    if (hotdogs == null) {
+        hotdogs = 0;
+    }
+    if (fries == null) {
+        fries = 0;
+    }
+    if (sodas == null) {
+        sodas = 0;
+    }
+
+    var subtotal = (hotdogs * 3.75) + (fries * 2) + (sodas * 1.80);
+    
+    total = subtotal;
+
+    var discount;
+    if (subtotal >= 20) {
+        discount = -0.1 * subtotal;
+        discount = discount.toFixed(2);
+        total = 0.9 * subtotal;
+    }
+
+    var taxes = 0.0625 * total;
+    taxes = taxes.toFixed(2);
+    total = 1.0625 * total;
+
+    total = total.toFixed(2);
+
+</script>
+
+<body>
+    <img src="Joe's Hotdogs.png" height=250px class="center">
+    <table class="styled-table">
+    <thead>
+        <tr>
+            <th>Item</th>
+            <th>Quantity Ordered</th>
+            <th> $$$ </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Hotdogs</td>
+            <td id = "hotdogs"> 0 </td>
+            <td id = "hotdogs_price"> 0 </td>
+        </tr>
+        <tr>
+            <td>Fries</td>
+            <td id = "fries"> 0 </td>
+            <td id = "fries_price"> 0 </td>
+        </tr>
+        <tr>
+            <td>Soda</td>
+            <td id = "sodas"> 0 </td>
+            <td id = "sodas_price"> 0 </td>
+        </tr>
+        <tr class="active-row">
+            <td>Subtotal</td>
+            <td></td>
+            <td id = "subtotal"> 0 </td>
+        </tr>
+        <tr>
+            <td>Discount</td>
+            <td> (For orders $20+)</td>
+            <td id = "discount"> N/A </td>
+        </tr>
+        <tr>
+            <td>Taxes</td>
+            <td></td>
+            <td id = "taxes"> 0 </td>
+        </tr>
+        <tr class="active-row">
+            <td>Total</td>
+            <td></td>
+            <td id = "total"> 0 </td>
+        </tr>
+    </tbody>
+</table>
+</body>
+
+
+<script>
+    document.getElementById("hotdogs").innerHTML = hotdogs;
+    document.getElementById("hotdogs_price").innerHTML = hotdogs * 3.75;
+    document.getElementById("fries").innerHTML = fries;
+    document.getElementById("fries_price").innerHTML = fries * 2.00;
+    document.getElementById("sodas").innerHTML = sodas;
+    document.getElementById("sodas_price").innerHTML = sodas * 1.80;
+    document.getElementById("subtotal").innerHTML = subtotal;
+    if (discount != null) {
+        document.getElementById("discount").innerHTML = discount;
+    }
+    document.getElementById("taxes").innerHTML = "+" + taxes;
+    document.getElementById("total").innerHTML =  total;
+</script>
+</html>

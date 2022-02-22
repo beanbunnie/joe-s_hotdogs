@@ -1,0 +1,41 @@
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+.styled-table {
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.2em;
+    font-family: "New Century Schoolbook", "TeX Gyre Schola", sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 40px rgba(14, 13, 13, 0.15);
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+}
+
+.styled-table thead tr {
+    background-color: #ff1616;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+.styled-table tbody tr {
+    border-bottom: thin solid #dbdbdb;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f7f3f3;
+}
+
+
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #ff1616;
+}
